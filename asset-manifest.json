@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/merempah-predeploy-app/static/css/main.3cfc4324.chunk.css",
+    "main.css": "/merempah-predeploy-app/static/css/main.c336ad34.chunk.css",
     "main.js": "/merempah-predeploy-app/static/js/main.264e2341.chunk.js",
     "main.js.map": "/merempah-predeploy-app/static/js/main.264e2341.chunk.js.map",
     "runtime-main.js": "/merempah-predeploy-app/static/js/runtime-main.3b629f7c.js",
@@ -9,10 +9,10 @@
     "static/js/2.2cca97ef.chunk.js": "/merempah-predeploy-app/static/js/2.2cca97ef.chunk.js",
     "static/js/2.2cca97ef.chunk.js.map": "/merempah-predeploy-app/static/js/2.2cca97ef.chunk.js.map",
     "index.html": "/merempah-predeploy-app/index.html",
-    "precache-manifest.78258baeab6e2df16a7db40b187c36fd.js": "/merempah-predeploy-app/precache-manifest.78258baeab6e2df16a7db40b187c36fd.js",
+    "precache-manifest.3bcf7a6a3f6b95a69a3336dbd610c489.js": "/merempah-predeploy-app/precache-manifest.3bcf7a6a3f6b95a69a3336dbd610c489.js",
     "service-worker.js": "/merempah-predeploy-app/service-worker.js",
     "static/css/2.a3ef9e1d.chunk.css.map": "/merempah-predeploy-app/static/css/2.a3ef9e1d.chunk.css.map",
-    "static/css/main.3cfc4324.chunk.css.map": "/merempah-predeploy-app/static/css/main.3cfc4324.chunk.css.map",
+    "static/css/main.c336ad34.chunk.css.map": "/merempah-predeploy-app/static/css/main.c336ad34.chunk.css.map",
     "static/js/2.2cca97ef.chunk.js.LICENSE.txt": "/merempah-predeploy-app/static/js/2.2cca97ef.chunk.js.LICENSE.txt",
     "static/media/hero1.jpg": "/merempah-predeploy-app/static/media/hero1.d52fb060.jpg",
     "static/media/slick-theme.css": "/merempah-predeploy-app/static/media/slick.f97e3bbf.svg"
@@ -21,7 +21,7 @@
     "static/js/runtime-main.3b629f7c.js",
     "static/css/2.a3ef9e1d.chunk.css",
     "static/js/2.2cca97ef.chunk.js",
-    "static/css/main.3cfc4324.chunk.css",
+    "static/css/main.c336ad34.chunk.css",
     "static/js/main.264e2341.chunk.js"
   ]
 }

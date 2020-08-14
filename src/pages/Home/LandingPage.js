@@ -13,7 +13,7 @@ const LandingPage = () => {
                     </div>
                     <div className="col-lg-7 col-md-12 d-flex justify-content-center align-items-center ml-4">
                         <div style={{width:'inherit',height:'inherit',textAlign:'start'}}>
-                            <h1 className="header-title">PROMO HIGHLIGHTS </h1>
+                            <h1 className="header-title">Authentic Spices <br></br> From Indonesia</h1>
                             <p className="header-subtitle mb-4">Mau cari rempah? Kini lebih mudah dengan Merempah!</p>
                             <a className="getting-started-button">Mulai Sekarang</a>
                         </div>

@@ -1,15 +1,30 @@
 import React from "react";
+import { connect } from "react-redux";
+import { fetchData } from "../../actions";
 
 import CustomCarousel  from "../../components/reusable/Carousel";
 
 import HeroPict from '../../assets/hero1.jpg'
+import HeroBg from '../../assets/heroBg.png'
+import AccessIcon from "../../assets/vectors/24access.png";
+import FreePackagingIcon from "../../assets/vectors/packaging.png";
+import DeliveryIcon from "../../assets/vectors/delivery.png";
+import CSIcon from "../../assets/vectors/cs.png";
 
-const LandingPage = () => {
+
+const mapStateToProps = (state) => {
+    return {
+        data : state.getAll.data
+    }
+} 
+
+const LandingPage = (props) => {
+    console.log(props.data)
     return (
         <div className="main-page" >
-            <div className="hero">
+            <div className="hero" style={{background:`url(${HeroBg})`,backgroundRepeat:'no-repeat',backgroundSize:'100%'}}>
                 <div className="row" style={{marginRight:'0px'}}>
-                    <div className="col-lg-4 col-md-12" style={{background:`url(${HeroPict})`,backgroundRepeat:'no-repeat',backgroundSize:'100% 500px',height:'500px'}}>
+                    <div className="col-lg-4 col-md-12" style={{background:`url(${HeroPict})`,backgroundRepeat:'no-repeat',backgroundSize:'100% 600px',height:'600px'}}>
                     </div>
                     <div className="col-lg-7 col-md-12 d-flex justify-content-center align-items-center ml-4">
                         <div style={{width:'inherit',height:'inherit',textAlign:'start'}}>
@@ -21,8 +36,25 @@ const LandingPage = () => {
                 </div>
             </div>
             <div className="hero-features">
-                <p>Akses 24 Jam</p>
-                <p>Free Packaging</p>
+                <div className="d-flex font-weight-bold" style={{marginRight:'10rem'}}>
+                    <img src={AccessIcon} style={{width:'45px',height:'45px'}}/>
+                    <p className="mt-2 ml-3" style={{fontSize:'20px'}}>Akses 24 Jam</p>
+                </div>
+                <div className="d-flex font-weight-bold" style={{marginRight:'10rem'}}>
+                    <img src={FreePackagingIcon} style={{width:'45px',height:'45px'}}/>
+                    <p className="mt-2 ml-3" style={{fontSize:'20px'}}>Free Packaging</p>
+                </div>
+                <div className='d-flex font-weight-bold' style={{marginRight:'10rem'}}>
+                    <img src={DeliveryIcon} style={{width:'45px',height:'45px'}}/>
+                    <p className="mt-2 ml-3" style={{fontSize:'20px'}}>Pengiriman Mendunia</p>
+                </div>
+                <div className='d-flex font-weight-bold'>
+                    <img src={CSIcon} style={{width:'45px',height:'45px'}}/>
+                    <p className="mt-2 ml-3" style={{fontSize:'20px'}}>Layanan Pelanggan</p>
+                </div>
+            </div>
+            <div>
+
             </div>
             {/* <div className="new-products">
                 <p>Produk Terbaru</p>
@@ -33,12 +65,12 @@ const LandingPage = () => {
             </div> */}
             <div className="product-for-you">
                 <div className="row" style={{marginRight:'0px'}}>
-                    <div className="col-lg-3" style={{textAlign:'start'}}>
-                        <h1 style={{marginBottom:'20px',fontSize:'40px'}} className="header-title">Produk <br/>Terbaru</h1>
-                        <a className="getting-started-button" style={{padding:'5px 30px'}}>Lihat Selengkapnya</a>
+                    <div className="col-lg-2" style={{textAlign:'start'}}>
+                        <h1 style={{marginBottom:'20px',fontSize:'40px',marginBottom:'3rem'}} className="header-title">Produk <br/>Terbaru</h1>
+                        <a className="getting-started-button" style={{padding:'5px 20px'}}>Lihat Selengkapnya</a>
                     </div>
-                    <div className="col-lg-9">
-                        <CustomCarousel/>
+                    <div className="col-lg-10">
+                        <CustomCarousel data={props.data}/>
                     </div>
                 </div>
             </div>
@@ -63,4 +95,4 @@ const LandingPage = () => {
     )
 }
 
-export default LandingPage
+export default connect(mapStateToProps) (LandingPage)

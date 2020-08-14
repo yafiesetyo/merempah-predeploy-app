@@ -6,7 +6,7 @@ const getAllData = (state=[],action) => {
         case FETCH_ALL_DATA:
             return {
                 loading : false,
-                data : []
+                data : [...state,...product]
             }
         default:
             return state

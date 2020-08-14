@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e0e6a0930f5a443f90a084ae1a86bcdc",
+    "revision": "8b977127c3952a574ad9c2c21fd84cf3",
     "url": "/merempah-predeploy-app/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/merempah-predeploy-app/static/css/2.a3ef9e1d.chunk.css"
   },
   {
-    "revision": "c2bb5e4551d1b8d30b9b",
+    "revision": "e8299085ff1eb52997fa",
     "url": "/merempah-predeploy-app/static/css/main.62d52ab5.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/merempah-predeploy-app/static/js/2.2cca97ef.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c2bb5e4551d1b8d30b9b",
-    "url": "/merempah-predeploy-app/static/js/main.509d8833.chunk.js"
+    "revision": "e8299085ff1eb52997fa",
+    "url": "/merempah-predeploy-app/static/js/main.1185fdac.chunk.js"
   },
   {
     "revision": "828c0eac78c7387e8901",

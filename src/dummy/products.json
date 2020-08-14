@@ -1,0 +1,92 @@
+[
+    {
+        "id":"sell_00001",
+        "author":"Muhammad Yafie",
+        "title":"Needing Turmeric",
+        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id mi et nisi bibendum fermentum ut nec quam. Phasellus iaculis ex ut tortor hendrerit, vel mattis mi mattis.",
+        "image_url":"https://cdn-prod.medicalnewstoday.com/content/images/articles/318/318405/turmeric-root-and-powder.jpg",
+        "location":[
+            {"province":"Jawa Barat",
+            "city":"Bandung"}
+        ],
+        "tag" : [
+            "herbs","medicine"
+        ],
+        "price":35000
+    },
+    {
+        "id":"sell_00002",
+        "author":"Yafie Sudarsono",
+        "title":"Ginger",
+        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id mi et nisi bibendum fermentum ut nec quam. Phasellus iaculis ex ut tortor hendrerit, vel mattis mi mattis.",
+        "image_url":"https://nusaberdaya.co.id/wp-content/uploads/2019/05/Ginger.jpg",
+        "location":[
+            {"province":"Jawa Barat",
+            "city":"Bandung"}
+        ],
+        "tag" : [
+            "medicine"
+        ],
+        "price":20000
+    },
+    {
+        "id":"sell_00003",
+        "author":"Setyo Wibowo",
+        "title":"Szechuan Peppercorn",
+        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id mi et nisi bibendum fermentum ut nec quam. Phasellus iaculis ex ut tortor hendrerit, vel mattis mi mattis.",
+        "image_url":"https://img.freepik.com/free-photo/black-galingale-isolated_253984-499.jpg?size=626&ext=jpg",
+        "location":[
+            {"province":"Jawa Barat",
+            "city":"Tasikmalaya"}
+        ],
+        "tag" : [
+            "herbs"
+        ],
+        "price":70000
+    },
+    {
+        "id":"sell_00004",
+        "author":"John Doe",
+        "title":"Habanero Chili",
+        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id mi et nisi bibendum fermentum ut nec quam. Phasellus iaculis ex ut tortor hendrerit, vel mattis mi mattis.",
+        "image_url":"https://upload.wikimedia.org/wikipedia/commons/1/1b/Habanero_pepers.jpg",
+        "location":[
+            {"province":"Jawa Barat",
+            "city":"Bandung"}
+        ],
+        "tag" : [
+            "herbs"
+        ],
+        "price":95000
+    },
+    {
+        "id":"sell_00005",
+        "author":"Ahmad Setiawan",
+        "title":"Habanero Chili",
+        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id mi et nisi bibendum fermentum ut nec quam. Phasellus iaculis ex ut tortor hendrerit, vel mattis mi mattis.",
+        "image_url":"https://upload.wikimedia.org/wikipedia/commons/1/1b/Habanero_pepers.jpg",
+        "location":[
+            {"province":"Jawa Barat",
+            "city":"Cimahi"}
+        ],
+        "tag" : [
+            "herbs"
+        ],
+        "price":95000
+    },
+    {
+        "id":"sell_00006",
+        "author":"Muhammad Djarot",
+        "title":"Habanero Chili",
+        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id mi et nisi bibendum fermentum ut nec quam. Phasellus iaculis ex ut tortor hendrerit, vel mattis mi mattis.",
+        "image_url":"https://upload.wikimedia.org/wikipedia/commons/1/1b/Habanero_pepers.jpg",
+        "location":[
+            {"province":"Jawa Barat",
+            "city":"Cimahi"}
+        ],
+        "tag" : [
+            "herbs"
+        ],
+        "price":90000
+    }
+]

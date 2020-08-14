@@ -34,7 +34,7 @@ const LandingPage = () => {
             <div className="product-for-you">
                 <div className="row" style={{marginRight:'0px'}}>
                     <div className="col-lg-3" style={{textAlign:'start'}}>
-                        <h1 style={{marginBottom:'20px',fontSize:'40px'}} className="header-title">Paling <br/>Banyak <br/>Dicari</h1>
+                        <h1 style={{marginBottom:'20px',fontSize:'40px'}} className="header-title">Produk <br/>Terbaru</h1>
                         <a className="getting-started-button" style={{padding:'5px 30px'}}>Lihat Selengkapnya</a>
                     </div>
                     <div className="col-lg-9">

@@ -277,6 +277,10 @@
   margin-right: 0;
 }
 
+.slick-list{
+  height: 500px !important;
+}
+
 
 
 /* Card */

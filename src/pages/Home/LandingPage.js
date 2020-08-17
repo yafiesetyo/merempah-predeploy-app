@@ -22,7 +22,7 @@ const LandingPage = (props) => {
     console.log(props.data)
     return (
         <div className="main-page" >
-            <div className="hero" style={{background:`url(${HeroBg})`,backgroundRepeat:'no-repeat',backgroundSize:'100%'}}>
+            <div className="hero" style={{background:`url(${HeroBg})`,backgroundRepeat:'no-repeat',backgroundSize:'100% 110%'}}>
                 <div className="row" style={{marginRight:'0px'}}>
                     <div className="col-lg-4 col-md-12" style={{background:`url(${HeroPict})`,backgroundRepeat:'no-repeat',backgroundSize:'100% 600px',height:'600px'}}>
                     </div>

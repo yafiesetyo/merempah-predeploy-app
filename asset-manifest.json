@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/merempah-predeploy-app/static/css/main.5a2a3aee.chunk.css",
-    "main.js": "/merempah-predeploy-app/static/js/main.19cfc8d2.chunk.js",
-    "main.js.map": "/merempah-predeploy-app/static/js/main.19cfc8d2.chunk.js.map",
+    "main.css": "/merempah-predeploy-app/static/css/main.db3a5d5e.chunk.css",
+    "main.js": "/merempah-predeploy-app/static/js/main.b75ef8fc.chunk.js",
+    "main.js.map": "/merempah-predeploy-app/static/js/main.b75ef8fc.chunk.js.map",
     "runtime-main.js": "/merempah-predeploy-app/static/js/runtime-main.3b629f7c.js",
     "runtime-main.js.map": "/merempah-predeploy-app/static/js/runtime-main.3b629f7c.js.map",
     "static/css/2.a3ef9e1d.chunk.css": "/merempah-predeploy-app/static/css/2.a3ef9e1d.chunk.css",
     "static/js/2.4f6571ff.chunk.js": "/merempah-predeploy-app/static/js/2.4f6571ff.chunk.js",
     "static/js/2.4f6571ff.chunk.js.map": "/merempah-predeploy-app/static/js/2.4f6571ff.chunk.js.map",
     "index.html": "/merempah-predeploy-app/index.html",
-    "precache-manifest.b9dc8c6f69cf678df3f48c91d4085e65.js": "/merempah-predeploy-app/precache-manifest.b9dc8c6f69cf678df3f48c91d4085e65.js",
+    "precache-manifest.2e18be0b028872889d9cf4ba4bbfb532.js": "/merempah-predeploy-app/precache-manifest.2e18be0b028872889d9cf4ba4bbfb532.js",
     "service-worker.js": "/merempah-predeploy-app/service-worker.js",
     "static/css/2.a3ef9e1d.chunk.css.map": "/merempah-predeploy-app/static/css/2.a3ef9e1d.chunk.css.map",
-    "static/css/main.5a2a3aee.chunk.css.map": "/merempah-predeploy-app/static/css/main.5a2a3aee.chunk.css.map",
+    "static/css/main.db3a5d5e.chunk.css.map": "/merempah-predeploy-app/static/css/main.db3a5d5e.chunk.css.map",
     "static/js/2.4f6571ff.chunk.js.LICENSE.txt": "/merempah-predeploy-app/static/js/2.4f6571ff.chunk.js.LICENSE.txt",
     "static/media/hero1.jpg": "/merempah-predeploy-app/static/media/hero1.d52fb060.jpg",
     "static/media/heroBg.png": "/merempah-predeploy-app/static/media/heroBg.bf23ea60.png",
@@ -22,7 +22,7 @@
     "static/js/runtime-main.3b629f7c.js",
     "static/css/2.a3ef9e1d.chunk.css",
     "static/js/2.4f6571ff.chunk.js",
-    "static/css/main.5a2a3aee.chunk.css",
-    "static/js/main.19cfc8d2.chunk.js"
+    "static/css/main.db3a5d5e.chunk.css",
+    "static/js/main.b75ef8fc.chunk.js"
   ]
 }

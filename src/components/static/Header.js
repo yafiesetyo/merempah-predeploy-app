@@ -36,7 +36,7 @@ const CustomHeader = () =>{
                 </div>
                 <div className="button-container">
                     <a className="button">Masuk</a>
-                    <a className="button button-inverted">Daftar</a>
+                    <a className="button button-inverted" style={{marginRight:'1rem'}}>Daftar</a>
                 </div>
             </div>
             <div className="header-second-row">

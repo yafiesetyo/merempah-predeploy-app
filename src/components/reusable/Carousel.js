@@ -7,7 +7,7 @@ import MaterialIcon from 'material-icons-react';
 const Carousel = (props) => {
     const data = props.data
     const settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 500,
         slidesToShow: 3,
@@ -18,7 +18,7 @@ const Carousel = (props) => {
      <div className="carousel-body">
         <Slider {...settings}>
             {data.map((item,index)=>(
-                <div key={index} className="mr-5">
+                <div key={index} className="mr-1" style={{width:'0%'}}>
                     <div className="card" style={{width:'15rem'}}>
                         <img className="card-img-top image-custom-card" src={item.image_url} alt="Card image cap"></img>
                         <div className="card-body">

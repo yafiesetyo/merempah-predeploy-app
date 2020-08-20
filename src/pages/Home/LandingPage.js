@@ -6,10 +6,14 @@ import CustomCarousel  from "../../components/reusable/Carousel";
 
 import HeroPict from '../../assets/hero1.jpg'
 import HeroBg from '../../assets/heroBg.png'
+import BannerBg from "../../assets/bannerBg.png";
+import Banner2Bg from "../../assets/banner2Bg.png";
+import subscribeBg from "../../assets/subscribeBg.png";
 import AccessIcon from "../../assets/vectors/24access.png";
 import FreePackagingIcon from "../../assets/vectors/packaging.png";
 import DeliveryIcon from "../../assets/vectors/delivery.png";
 import CSIcon from "../../assets/vectors/cs.png";
+import Logo from "../../assets/Logo.png";
 
 
 const mapStateToProps = (state) => {
@@ -53,8 +57,22 @@ const LandingPage = (props) => {
                     <p className="mt-2 ml-3" style={{fontSize:'20px'}}>Layanan Pelanggan</p>
                 </div>
             </div>
-            <div>
-
+            <div className="hero-description">
+                <div className="description">
+                    <div className="row">
+                        <div className="col-lg-3 mr-3">
+                            <img src={Logo}/>
+                        </div>
+                        <div className="col-lg-8 text-left">
+                            <p className="description-text">
+                            Merempah merupakan platform penyedia rempah-rempah, 
+                            di mana platform ini akan membantu petani rempah dalam hal pendistribusian dan penjualan rempah. 
+                            Merempah memiliki bisnis model dimana merempah akan menangani dan memastikan pendistribusian rempah baik pengiriman domestik maupun internasional, 
+                            hingga sampai kepada pelanggan yang sesuai atau melebihi harapan petani rempah. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
             {/* <div className="new-products">
                 <p>Produk Terbaru</p>
@@ -74,20 +92,57 @@ const LandingPage = (props) => {
                     </div>
                 </div>
             </div>
-            {/* <div>
-                KOSONG
-            </div> */}
-            {/* <div className="subscribe-us">
-                <h3>Dapatkan Info Terbaru Dari Merempah !</h3>
-                <div className="subscribe-us-input-container mb-2">
-                    <div className="subscribe-us-input d-flex justify-content-center">
-                        <input className="custom-search-box" style={{width:'500px'}} placeholder="Masukkan email"/>
-                        <div className="subscribe-button-container">
-                            Berlangganan
-                        </div>
+
+            <div className="hero-banner" style={{background:`url(${BannerBg})`,backgroundRepeat:'no-repeat',backgroundSize:'100% 110%'}}>
+                <div className="banner-promote">
+                    <div className="banner-content">
+                        <p style={{fontWeight:'bold',color:"#E3D081",fontSize:"32px"}}>Tingkatkan daya tahan tubuh dengan mengkonsumsi rempah-rempah.</p>
+                        <a className="getting-started-button" style={{padding:'5px 20px',backgroundColor:"#E3D081",color:'#793f0d'}}>Lihat Selengkapnya</a>
                     </div>
                 </div>
-            </div> */}
+            </div>
+
+            <div className="lastest-product">
+                <div className="row" style={{marginRight:'0px',marginLeft:'5rem'}}>
+                    <div className="col-lg-2 mt-5" style={{textAlign:'start'}}>
+                        <h1 style={{marginBottom:'20px',fontSize:'40px',marginBottom:'3rem'}} className="header-title">Produk <br/>Untukmu</h1>
+                        <a className="getting-started-button" style={{padding:'5px 20px'}}>Lihat Selengkapnya</a>
+                    </div>
+                    <div className="col-lg-10 mt-5 mb-3">
+                        <CustomCarousel data={props.data}/>
+                    </div>
+                </div>
+            </div>
+
+            <div className="hero-banner" style={{background:`url(${Banner2Bg})`,backgroundRepeat:'no-repeat',backgroundSize:'100% 110%'}}>
+                <div className="banner-promote">
+                    <div className="banner-content">
+                        <p style={{fontWeight:'bold',color:"#E3D081",fontSize:"32px"}}>Tak Kenal Maka Tak Sayang. Kenalan dulu sama Merempah, yuk!</p>
+                        <a className="getting-started-button" style={{padding:'5px 20px',backgroundColor:"#E3D081",color:'#793f0d'}}>Yuk !</a>
+                    </div>
+                </div>
+            </div>
+            <div className="article-card-container">
+                <h1 style={{fontWeight:'bold',fontSize:"48px",color:"#964F38",marginBottom:'3rem'}}>Artikel Terkait</h1>
+                <CustomCarousel data={props.data}/>
+            </div>
+            <div className="subscribe-us" style={{background:`url(${subscribeBg})`,backgroundRepeat:'no-repeat',backgroundSize:'100% 110%'}}>
+                <div className="row pt-5 pb-5" style={{marginRight:'0px',paddingLeft:'5rem'}}>
+                    <div className="col-lg-3 text-left">
+                        <h3 style={{fontWeight:'bold',color:"#964F38",fontSize:"32px"}}>Dapatkan Info Terbaru Dari Merempah !</h3>
+                    </div>
+                    <div className="col-lg-9 ">
+                        <div className="subscribe-us-input-container mt-5 d-flex justify-content-start">
+                            <div className="subscribe-us-input d-flex justify-content-center">
+                                <input className="custom-search-box" style={{width:'500px'}} placeholder="Masukkan email"/>
+                                <div className="subscribe-button-container">
+                                    Berlangganan
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
             <div>
 
             </div>

@@ -270,8 +270,8 @@
 
 /* Carousel */
 .carousel-body{
-  width: 85%;
-  margin-left: 100px;
+  width: 90%;
+  margin-left: 3rem;
 }
 
 .carousel-content-container{
@@ -293,7 +293,7 @@
 }
 
 .slick-list{
-  height: 500px !important;
+  height: 480px !important;
 }
 
 .slick-slide {

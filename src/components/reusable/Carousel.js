@@ -12,14 +12,14 @@ const Carousel = (props) => {
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
-        centerMode:true
+        centerMode:false
       };
  return(
      <div className="carousel-body">
         <Slider {...settings}>
             {data.map((item,index)=>(
-                <div key={index} className="mr-1" style={{width:'0%'}}>
-                    <div className="card" style={{width:'15rem'}}>
+                <div key={index} style={{width:'0%',margin:'10px'}}>
+                    <div className="card" style={{width:'18rem'}}>
                         <img className="card-img-top image-custom-card" src={item.image_url} alt="Card image cap"></img>
                         <div className="card-body">
                             <div className='card-location'>

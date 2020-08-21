@@ -99,7 +99,7 @@ const ProductPage = (props) => {
                         <a className="getting-started-button" style={{padding:'5px 20px'}}>Lihat Selengkapnya</a>
                     </div>
                     <div className="col-lg-10">
-                        <CustomCarousel data={props.data}/>
+                        <CustomCarousel data={props.data} slideCount={3}/>
                     </div>
                 </div>
             </div>
@@ -134,7 +134,7 @@ const ProductPage = (props) => {
                     ))}
                 </div>
             </div>
-            
+
             <div className="subscribe-us" style={{background:`url(${subscribeBg})`,backgroundRepeat:'no-repeat',backgroundSize:'100% 110%'}}>
                 <div className="row pt-5 pb-5" style={{marginRight:'0px',paddingLeft:'5rem'}}>
                     <div className="col-lg-3 text-left">

@@ -88,7 +88,7 @@ const LandingPage = (props) => {
                         <a className="getting-started-button" style={{padding:'5px 20px'}}>Lihat Selengkapnya</a>
                     </div>
                     <div className="col-lg-10">
-                        <CustomCarousel data={props.data}/>
+                        <CustomCarousel data={props.data} slideCount={3}/>
                     </div>
                 </div>
             </div>
@@ -109,7 +109,7 @@ const LandingPage = (props) => {
                         <a className="getting-started-button" style={{padding:'5px 20px'}}>Lihat Selengkapnya</a>
                     </div>
                     <div className="col-lg-10 mt-5 mb-3">
-                        <CustomCarousel data={props.data}/>
+                        <CustomCarousel data={props.data} slideCount={3}/>
                     </div>
                 </div>
             </div>
@@ -124,7 +124,9 @@ const LandingPage = (props) => {
             </div>
             <div className="article-card-container">
                 <h1 style={{fontWeight:'bold',fontSize:"48px",color:"#964F38",marginBottom:'3rem'}}>Artikel Terkait</h1>
-                <CustomCarousel data={props.data}/>
+                <div style={{width:'90%'}} className="d-flex justify-content-center ml-5">
+                    <CustomCarousel data={props.data} slideCount={3}/>
+                </div>
             </div>
             <div className="subscribe-us" style={{background:`url(${subscribeBg})`,backgroundRepeat:'no-repeat',backgroundSize:'100% 110%'}}>
                 <div className="row pt-5 pb-5" style={{marginRight:'0px',paddingLeft:'5rem'}}>

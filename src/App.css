@@ -62,7 +62,7 @@
 }
 
 .button-container{
-  margin-top: 23px;
+  margin-top: 10px;
   display: flex;
   margin-left: auto;
   justify-content: end;
@@ -158,7 +158,6 @@
 .navbar-container{
   display: flex;
   margin-bottom: 1rem;
-  margin-left: 5rem;
 }
 
 .navbar-container>ul{

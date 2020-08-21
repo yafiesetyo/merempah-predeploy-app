@@ -1,4 +1,5 @@
 import React from "react";
+import wideLogo from "../../assets/wideLogo.png";
 
 const footer = () => {
     return(

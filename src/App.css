@@ -357,3 +357,19 @@
 .article-card-container{
   margin-top: 3rem;
 }
+
+/* Products */
+
+.product-categories{
+  background-color: #E3D081;
+}
+
+.category-list{
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.category-img{
+  width: 70px;
+  height: 74px;
+}

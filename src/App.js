@@ -1,6 +1,6 @@
-import React from 'react';
-import './App.css';
-import { Route,Switch } from "react-router-dom";
+import React from "react";
+import "./App.css";
+import { Route, Switch } from "react-router-dom";
 
 // Pages
 import HomeIndex from "./pages/Home/index";
@@ -9,36 +9,40 @@ import ArticleIndex from "./pages/Article/index";
 import OrderIndex from "./pages/Order/index";
 import HelpIndex from "./pages/Help/index";
 import AboutIndex from "./pages/About/index";
+import AccountIndex from "./pages/LoginRegister/index";
 
 // static components
 import CustomHeader from "./components/static/Header";
-import CustomFooter from "./components/static/Footer"
+import CustomFooter from "./components/static/Footer";
 
 function App() {
   return (
     <div className="App">
-      <CustomHeader/>
+      <CustomHeader />
       <Switch>
         <Route exact path="/">
-          <HomeIndex/>
+          <HomeIndex />
         </Route>
         <Route path="/products">
-          <ProductIndex/>
+          <ProductIndex />
         </Route>
         <Route path="/articles">
-          <ArticleIndex/>
+          <ArticleIndex />
         </Route>
         <Route path="/order">
-          <OrderIndex/>
+          <OrderIndex />
         </Route>
         <Route path="/help">
-          <HelpIndex/>
+          <HelpIndex />
         </Route>
         <Route path="/about">
-          <AboutIndex/>
+          <AboutIndex />
+        </Route>
+        <Route path="/account">
+          <AccountIndex />
         </Route>
       </Switch>
-      <CustomFooter/>
+      <CustomFooter />
     </div>
   );
 }

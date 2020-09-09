@@ -393,3 +393,9 @@
   opacity: 0.01;
   transition: opacity 300ms ease-in;
 }
+
+.form-card {
+  border-radius: 10px;
+  padding: 50px;
+  border: solid 2px rgba(0, 0, 0, 0.25);
+}

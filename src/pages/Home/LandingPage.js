@@ -68,7 +68,11 @@ const LandingPage = (props) => {
           className="d-flex font-weight-bold"
           style={{ marginRight: "10rem" }}
         >
-          <img src={AccessIcon} style={{ width: "45px", height: "45px" }} />
+          <img
+            src={AccessIcon}
+            style={{ width: "45px", height: "45px" }}
+            alt="Akses 24 Jam"
+          />
           <p className="mt-2 ml-3" style={{ fontSize: "20px" }}>
             Akses 24 Jam
           </p>

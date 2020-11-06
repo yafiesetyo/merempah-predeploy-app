@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { fetchData } from "../../redux/actions";
+import { Spinner } from "react-bootstrap";
+import { GetAllStoresData } from "../../redux/actions/stores/storesAction";
 
 import CustomCarousel from "../../components/reusable/Carousel";
 
@@ -15,15 +16,22 @@ import DeliveryIcon from "../../assets/vectors/delivery.png";
 import CSIcon from "../../assets/vectors/cs.png";
 import Logo from "../../assets/Logo.png";
 
-const mapStateToProps = (state) => {
-  console.log(state);
+const mapDispatchToProps = (dispatch) => {
   return {
-    data: state.getAll.data,
+    getAllStore: () => dispatch(GetAllStoresData()),
+  };
+};
+
+const mapStateToProps = (state) => {
+  return {
+    dataAllStore: state.getAllStore,
   };
 };
 
 const LandingPage = (props) => {
-  console.log(props.data);
+  useEffect(() => {
+    props.getAllStore();
+  }, []);
   return (
     <div className="main-page">
       <div
@@ -134,10 +142,9 @@ const LandingPage = (props) => {
             </div> */}
       <div className="product-for-you">
         <div className="row" style={{ marginRight: "0px" }}>
-          <div className="col-lg-2" style={{ textAlign: "start" }}>
+          <div className="col-lg-2 mt-5 mb-5" style={{ textAlign: "start" }}>
             <h1
               style={{
-                marginBottom: "20px",
                 fontSize: "40px",
                 marginBottom: "3rem",
               }}
@@ -153,8 +160,12 @@ const LandingPage = (props) => {
               Lihat Selengkapnya
             </a>
           </div>
-          <div className="col-lg-10">
-            <CustomCarousel data={props.data} slideCount={3} />
+          <div className="col-lg-10 d-flex align-items-center">
+            {props.dataAllStore.isLoading === false ? (
+              <CustomCarousel data={props.dataAllStore.data} slideCount={3} />
+            ) : (
+              <Spinner animation="border" variant="dark" />
+            )}
           </div>
         </div>
       </div>
@@ -190,7 +201,10 @@ const LandingPage = (props) => {
 
       <div className="lastest-product">
         <div className="row" style={{ marginRight: "0px", marginLeft: "5rem" }}>
-          <div className="col-lg-2 mt-5" style={{ textAlign: "start" }}>
+          <div
+            className="col-lg-2 col-lg-2 mt-5 mb-5"
+            style={{ textAlign: "start" }}
+          >
             <h1
               style={{
                 marginBottom: "20px",
@@ -210,7 +224,11 @@ const LandingPage = (props) => {
             </a>
           </div>
           <div className="col-lg-10 mt-5 mb-3">
-            <CustomCarousel data={props.data} slideCount={3} />
+            {props.dataAllStore.isLoading === false ? (
+              <CustomCarousel data={props.dataAllStore.data} slideCount={3} />
+            ) : (
+              <Spinner animation="border" variant="dark" />
+            )}
           </div>
         </div>
       </div>
@@ -258,7 +276,11 @@ const LandingPage = (props) => {
           style={{ width: "90%" }}
           className="d-flex justify-content-center ml-5"
         >
-          <CustomCarousel data={props.data} slideCount={3} />
+          {/* {props.dataAllStore.isLoading === false ? (
+            <CustomCarousel data={props.dataAllStore.data} slideCount={3} />
+          ) : (
+            <Spinner animation="border" variant="dark" />
+          )} */}
         </div>
       </div>
       <div
@@ -299,4 +321,4 @@ const LandingPage = (props) => {
   );
 };
 
-export default connect(mapStateToProps)(LandingPage);
+export default connect(mapStateToProps, mapDispatchToProps)(LandingPage);

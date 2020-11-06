@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import { showLogin, showRegister } from "../../redux/actions/index";
 
 import wideLogo from "../../assets/wideLogo.png";
+import ProfileHeader from "../static/ProfileHeader";
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -14,12 +15,23 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
+const mapStateToProps = (state) => {
+  return {
+    data: state.auth,
+  };
+};
+
 const CustomHeader = (props) => {
+  console.log("is login ? " + props.data.isLogin);
   return (
     <div className="custom-header">
-      <div className="header-first-row mt-1">
+      <div className="header-first-row">
         <div className="mt-2 ml-4 mr-5 logo-container">
-          <img src={wideLogo} style={{ width: "300px" }} />
+          <img
+            src={wideLogo}
+            style={{ width: "300px", float: "left" }}
+            alt=""
+          />
         </div>
         <div className="mt-3 search-box-container">
           <div className="d-flex">
@@ -31,23 +43,27 @@ const CustomHeader = (props) => {
             </div>
           </div>
         </div>
-        <div className="button-container">
-          <Link
-            to="/account"
-            className="button"
-            onClick={props.LoginButtonEventHandler}
-          >
-            Masuk
-          </Link>
-          <Link
-            to="/account"
-            className="button button-inverted"
-            style={{ marginRight: "1rem" }}
-            onClick={props.RegisterButtonEventHandler}
-          >
-            Daftar
-          </Link>
-        </div>
+        {props.data.isLogin === true ? (
+          <ProfileHeader userName={props.data.last_name} />
+        ) : (
+          <div className="button-container">
+            <Link
+              to="/login"
+              className="button"
+              onClick={props.LoginButtonEventHandler}
+            >
+              Masuk
+            </Link>
+            <Link
+              to="/register"
+              className="button button-inverted"
+              style={{ marginRight: "1rem" }}
+              onClick={props.RegisterButtonEventHandler}
+            >
+              Daftar
+            </Link>
+          </div>
+        )}
       </div>
       <div className="header-second-row">
         <div className="navbar-container mt-1">
@@ -131,4 +147,4 @@ const CustomHeader = (props) => {
   );
 };
 
-export default connect(null, mapDispatchToProps)(CustomHeader);
+export default connect(mapStateToProps, mapDispatchToProps)(CustomHeader);

@@ -1,8 +1,16 @@
-import { createStore } from "redux";
-import reducers from "../reducers";
-import { fetchData } from "../actions/index";
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import { createLogger } from "redux-logger";
 
-const store = createStore(reducers);
-store.dispatch(fetchData());
+import reducers from "../reducers";
+import { loadState, setState } from "./localStorage";
+
+const logger = createLogger();
+const loadLocalStorage = loadState();
+const middleware = applyMiddleware(logger, thunk);
+const store = createStore(reducers, loadLocalStorage, middleware);
+store.subscribe(() => {
+  setState(store.getState());
+});
 
 export default store;

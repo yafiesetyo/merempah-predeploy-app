@@ -1,10 +1,12 @@
 import { combineReducers } from "redux";
-import getAllData from "./getAllData";
-import getDataById from "./getDataById";
-import componentOps from "./componentOps";
+import AuthReducer from "./user/authReducer";
+import RegisterReducer from "./user/registerReducer";
+import GetUserReducer from "./user/getUserReducer";
+import GetAllStoreReducer from "./stores/getAllStoreReducer";
 
 export default combineReducers({
-  getAll: getAllData,
-  getById: getDataById,
-  componentOps: componentOps,
+  auth: AuthReducer,
+  register: RegisterReducer,
+  getUser: GetUserReducer,
+  getAllStore: GetAllStoreReducer,
 });

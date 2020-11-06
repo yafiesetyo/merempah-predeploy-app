@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
 
 // Pages
 import HomeIndex from "./pages/Home/index";
@@ -9,13 +10,20 @@ import ArticleIndex from "./pages/Article/index";
 import OrderIndex from "./pages/Order/index";
 import HelpIndex from "./pages/Help/index";
 import AboutIndex from "./pages/About/index";
-import AccountIndex from "./pages/LoginRegister/index";
+import LoginSubPage from "./pages/LoginRegister/LoginSubPage";
+import RegisterSubPage from "./pages/LoginRegister/RegisterSubPage";
 
 // static components
 import CustomHeader from "./components/static/Header";
 import CustomFooter from "./components/static/Footer";
 
-function App() {
+const mapStateToProps = (state) => {
+  return {
+    loginData: state.auth,
+  };
+};
+
+function App(props) {
   return (
     <div className="App">
       <CustomHeader />
@@ -33,13 +41,20 @@ function App() {
           <OrderIndex />
         </Route>
         <Route path="/help">
-          <HelpIndex />
+          {props.loginData.isLogin === true ? (
+            <HelpIndex />
+          ) : (
+            <Redirect to="/login" />
+          )}
         </Route>
         <Route path="/about">
           <AboutIndex />
         </Route>
-        <Route path="/account">
-          <AccountIndex />
+        <Route path="/login">
+          <LoginSubPage />
+        </Route>
+        <Route path="/register">
+          <RegisterSubPage />
         </Route>
       </Switch>
       <CustomFooter />
@@ -47,4 +62,4 @@ function App() {
   );
 }
 
-export default App;
+export default connect(mapStateToProps)(App);

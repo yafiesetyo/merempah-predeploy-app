@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 import CustomCarousel from "../../components/reusable/Carousel";
 import MaterialIcon from "material-icons-react";
+import { Spinner } from "react-bootstrap";
 
 import HeroPict from "../../assets/hero1.jpg";
 import HeroBg from "../../assets/productHeroBg.png";
@@ -22,7 +23,7 @@ import BijiIcon from "../../assets/vectors/biji.png";
 
 const mapStateToProps = (state) => {
   return {
-    data: state.getAll.data,
+    dataAllStore: state.getAllStore,
   };
 };
 
@@ -199,7 +200,11 @@ const ProductPage = (props) => {
             </a>
           </div>
           <div className="col-lg-10">
-            <CustomCarousel data={props.data} slideCount={3} />
+            {props.dataAllStore.isLoading === false ? (
+              <CustomCarousel data={props.dataAllStore.data} slideCount={3} />
+            ) : (
+              <Spinner animation="border" variant="dark" />
+            )}
           </div>
         </div>
       </div>
@@ -239,43 +244,44 @@ const ProductPage = (props) => {
           className="row d-flex justify-content-center"
           style={{ marginRight: "0px" }}
         >
-          {props.data.map((item, index) => (
-            <div key={index} className="col-lg-2 mr-5 ml-3 mb-5">
-              <div style={{ width: "0%" }}>
-                <div className="card" style={{ width: "18rem" }}>
-                  <img
-                    className="card-img-top image-custom-card"
-                    src={item.image_url}
-                    alt="Card image cap"
-                  ></img>
-                  <div className="card-body">
-                    <div className="card-location">
-                      <span style={{ marginTop: "5px" }}>
-                        <MaterialIcon icon="location_on" />
-                      </span>
-                      {"".concat(
-                        item.location[0].city,
-                        ", ",
-                        item.location[0].province
-                      )}
+          {props.dataAllStore.isLoading === false ? (
+            props.dataAllStore.data.map((item, index) => (
+              <div key={index} className="col-lg-2 mr-5 ml-3 mb-5">
+                <div style={{ width: "0%" }}>
+                  <div className="card mt-5" style={{ width: "18rem" }}>
+                    <img
+                      className="card-img-top image-custom-card"
+                      src={item.image_URL}
+                      alt="Product"
+                    ></img>
+                    <div className="card-body">
+                      <div className="card-location">
+                        <span style={{ marginTop: "5px" }}>
+                          <MaterialIcon icon="location_on" />
+                        </span>
+                        Kota Malang, Jawa Timur
+                      </div>
+                      <h5 className="card-title font-weight-bold text-left ml-2">
+                        {item.name.substring(0, 15) + "..."}
+                      </h5>
+                      <p className="card-text text-left ml-2">
+                        {item.description.substring(0, 80) + "..."}
+                      </p>
+
+                      <button
+                        className="getting-started-button"
+                        style={{ padding: "5px 2rem" }}
+                      >
+                        Lihat Produk
+                      </button>
                     </div>
-                    <h5 className="card-title font-weight-bold text-left ml-2">
-                      {item.title.substring(0, 15) + "..."}
-                    </h5>
-                    <p className="card-text text-left ml-2">
-                      {item.description.substring(0, 80) + "..."}
-                    </p>
-                    <a
-                      className="getting-started-button"
-                      style={{ padding: "5px 2rem" }}
-                    >
-                      Lihat Produk
-                    </a>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))
+          ) : (
+            <p>Loading...</p>
+          )}
         </div>
       </div>
 

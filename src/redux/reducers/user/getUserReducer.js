@@ -15,6 +15,11 @@ const getUserReducer = (state = initState, action) => {
         data: [action.response_data],
       };
 
+    case UserActionTypes.ERROR_GET_ONE:
+      return {
+        ...state,
+        message: "error",
+      };
     default:
       return state;
   }

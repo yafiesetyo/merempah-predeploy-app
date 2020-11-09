@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect } from "react";
+import { Spinner } from "react-bootstrap";
 import { connect } from "react-redux";
 import { Logout, GetData } from "../../redux/actions/user/userAction";
 
@@ -19,9 +21,6 @@ const mapStateToProps = (state) => {
 
 const ProfileHeader = (props) => {
   const [isToggle, setIsToggle] = useState(false);
-  // useEffect(() => {
-  //   props.getUserData(props.data.data[0].id);
-  // }, []);
   return (
     <>
       <div
@@ -30,7 +29,11 @@ const ProfileHeader = (props) => {
       >
         <div className="profile-header-image"></div>
         <div className="profile-header-name">
-          <p>{props.userData.data[0].data[0].username}</p>
+          <p>
+            {props.userData.message !== "Error"
+              ? props.userData.data[0].data[0].username
+              : "null"}
+          </p>
         </div>
       </div>
       <div

@@ -16,6 +16,7 @@ export const Auth = (username, password) => {
         }
       )
       .then((res) => {
+        console.log(`login API response => ${res.data[0]}`);
         localStorage.setItem("access-token", res.data[0].access_token);
         dispatch({
           type: UserActionTypes.LOGIN_DATA,
@@ -43,14 +44,14 @@ export const Auth = (username, password) => {
           .catch((err) => {
             dispatch({
               type: UserActionTypes.ERROR_GET_ONE,
-              response_data: err,
+              response_data: "terjadi kesalahan",
             });
           });
       })
       .catch((err) => {
         dispatch({
           type: UserActionTypes.ERROR_LOGIN,
-          response_data: err,
+          response_data: "terjadi kesalahan",
         });
       });
   };

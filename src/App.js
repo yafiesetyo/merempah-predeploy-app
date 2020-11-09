@@ -51,10 +51,18 @@ function App(props) {
           <AboutIndex />
         </Route>
         <Route path="/login">
-          <LoginSubPage />
+          {props.loginData.isLogin === true ? (
+            <Redirect to="/products" />
+          ) : (
+            <LoginSubPage />
+          )}
         </Route>
         <Route path="/register">
-          <RegisterSubPage />
+          {props.loginData.isLogin === true ? (
+            <Redirect to="/products" />
+          ) : (
+            <RegisterSubPage />
+          )}
         </Route>
       </Switch>
       <CustomFooter />

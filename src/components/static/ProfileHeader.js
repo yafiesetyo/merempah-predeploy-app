@@ -19,9 +19,9 @@ const mapStateToProps = (state) => {
 
 const ProfileHeader = (props) => {
   const [isToggle, setIsToggle] = useState(false);
-  useEffect(() => {
-    props.getUserData(props.data.data[0].id);
-  }, []);
+  // useEffect(() => {
+  //   props.getUserData(props.data.data[0].id);
+  // }, []);
   return (
     <>
       <div

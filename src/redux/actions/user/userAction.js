@@ -21,6 +21,31 @@ export const Auth = (username, password) => {
           type: UserActionTypes.LOGIN_DATA,
           response_data: res.data[0].id,
         });
+        dispatch({
+          type: UserActionTypes.PROCESS_GET_ONE_START,
+        });
+        axios
+          .post(
+            `https://merempah-predeploy-api-v2.herokuapp.com/api/v1/private/user/get`,
+            null,
+            {
+              headers: {
+                "x-access-token": localStorage.getItem("access-token"),
+              },
+            }
+          )
+          .then((res) => {
+            dispatch({
+              type: UserActionTypes.GET_ONE_DATA,
+              response_data: res.data,
+            });
+          })
+          .catch((err) => {
+            dispatch({
+              type: UserActionTypes.ERROR_GET_ONE,
+              response_data: err,
+            });
+          });
       })
       .catch((err) => {
         dispatch({

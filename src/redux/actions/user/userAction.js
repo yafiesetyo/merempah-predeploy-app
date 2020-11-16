@@ -16,37 +16,47 @@ export const Auth = (username, password) => {
         }
       )
       .then((res) => {
-        console.log(`login API response => ${res.data[0]}`);
-        localStorage.setItem("access-token", res.data[0].access_token);
         dispatch({
           type: UserActionTypes.LOGIN_DATA,
           response_data: res.data[0].id,
-        });
-        dispatch({
-          type: UserActionTypes.PROCESS_GET_ONE_START,
-        });
-        axios
-          .post(
-            `https://merempah-predeploy-api-v2.herokuapp.com/api/v1/private/user/get`,
-            null,
-            {
-              headers: {
-                "x-access-token": localStorage.getItem("access-token"),
-              },
-            }
-          )
-          .then((res) => {
-            dispatch({
-              type: UserActionTypes.GET_ONE_DATA,
-              response_data: res.data,
-            });
-          })
-          .catch((err) => {
-            dispatch({
-              type: UserActionTypes.ERROR_GET_ONE,
-              response_data: "terjadi kesalahan",
-            });
+        }).then(() => {
+          dispatch({
+            type: UserActionTypes.PROCESS_GET_ONE_START,
           });
+          axios
+            .post(
+              `https://merempah-predeploy-api-v2.herokuapp.com/api/v1/private/user/get`,
+              null,
+              {
+                headers: {
+                  "x-access-token": localStorage.getItem("access-token"),
+                },
+              }
+            )
+            .then((res) => {
+              if (res.data) {
+                dispatch({
+                  type: UserActionTypes.GET_ONE_DATA,
+                  response_data: res.data,
+                });
+              } else {
+                dispatch({
+                  type: UserActionTypes.ERROR_GET_ONE,
+                  response_data: "terjadi kesalahan",
+                });
+              }
+            })
+            .catch((err) => {
+              dispatch({
+                type: UserActionTypes.ERROR_GET_ONE,
+                response_data: "terjadi kesalahan",
+              });
+            });
+          dispatch({
+            type: UserActionTypes.ERROR_GET_ONE,
+            response_data: "terjadi kesalahan",
+          });
+        });
       })
       .catch((err) => {
         dispatch({

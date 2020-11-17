@@ -483,3 +483,10 @@
 .dropdown-item {
   cursor: pointer;
 }
+
+/* Cart */
+
+.cart-list-delete-all{
+  border-radius: 5px;
+  
+}

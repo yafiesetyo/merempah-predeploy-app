@@ -16,46 +16,10 @@ export const Auth = (username, password) => {
         }
       )
       .then((res) => {
+        localStorage.setItem("access-token", res.data[0].access_token);
         dispatch({
           type: UserActionTypes.LOGIN_DATA,
           response_data: res.data[0].id,
-        }).then(() => {
-          dispatch({
-            type: UserActionTypes.PROCESS_GET_ONE_START,
-          });
-          axios
-            .post(
-              `https://merempah-predeploy-api-v2.herokuapp.com/api/v1/private/user/get`,
-              null,
-              {
-                headers: {
-                  "x-access-token": localStorage.getItem("access-token"),
-                },
-              }
-            )
-            .then((res) => {
-              if (res.data) {
-                dispatch({
-                  type: UserActionTypes.GET_ONE_DATA,
-                  response_data: res.data,
-                });
-              } else {
-                dispatch({
-                  type: UserActionTypes.ERROR_GET_ONE,
-                  response_data: "terjadi kesalahan",
-                });
-              }
-            })
-            .catch((err) => {
-              dispatch({
-                type: UserActionTypes.ERROR_GET_ONE,
-                response_data: "terjadi kesalahan",
-              });
-            });
-          dispatch({
-            type: UserActionTypes.ERROR_GET_ONE,
-            response_data: "terjadi kesalahan",
-          });
         });
       })
       .catch((err) => {
@@ -100,7 +64,7 @@ export const Register = (registerData) => {
   };
 };
 
-export const GetData = (userId, id) => {
+export const GetData = () => {
   return (dispatch) => {
     dispatch({
       type: UserActionTypes.PROCESS_GET_ONE_START,
@@ -136,6 +100,7 @@ export const Logout = () => {
     dispatch({ type: UserActionTypes.PROCESS_LOGOUT_START });
     try {
       localStorage.removeItem("access-token");
+      localStorage.removeItem("state");
       dispatch({
         type: UserActionTypes.FLUSH_LOGIN_DATA,
       });

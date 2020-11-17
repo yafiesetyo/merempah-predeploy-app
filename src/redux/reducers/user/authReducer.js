@@ -4,7 +4,7 @@ const initState = {
   isLogin: false,
   message: "",
   isLoading: false,
-  data: [],
+  data: "",
 };
 
 const authReducer = (state = initState, action) => {
@@ -15,20 +15,20 @@ const authReducer = (state = initState, action) => {
         isLoading: true,
       };
     case UserActionTypes.LOGIN_DATA:
-      console.log("reducers says " + action.response_data);
       if (action.response_data) {
         return {
           ...state,
           isLoading: false,
-          data: [...action.response_data],
           message: "login success !",
+          data: action.response_data.toString(),
           isLogin: true,
         };
       } else {
         return {
           ...state,
           isLoading: false,
-          message: action.response_data.message,
+          isLogin: false,
+          message: "invalid username or password !",
         };
       }
     case UserActionTypes.FLUSH_LOGIN_DATA:
@@ -36,7 +36,7 @@ const authReducer = (state = initState, action) => {
         ...state,
         isLoading: false,
         isLogin: false,
-        data: [],
+        data: "",
         message: "",
       };
     case UserActionTypes.ERROR_LOGIN:

@@ -127,7 +127,9 @@ const CustomHeader = (props) => {
         </div>
         <div className="misc-icons-container">
           <div className="mr-3 ml-5">
-            <MaterialIcon icon="shopping_cart" size={32} color="#964F38" />
+            <NavLink to="/cart" activeClassName="active">
+              <MaterialIcon icon="shopping_cart" size={32} color="#964F38" />
+            </NavLink>
           </div>
           <div className="mr-3 ">
             <MaterialIcon icon="notifications" size={32} color="#964F38" />

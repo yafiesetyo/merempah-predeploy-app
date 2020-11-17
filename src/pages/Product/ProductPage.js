@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { connect } from "react-redux";
 
 import CustomCarousel from "../../components/reusable/Carousel";
@@ -21,13 +22,25 @@ import DaunIcon from "../../assets/vectors/daun.png";
 import BungaIcon from "../../assets/vectors/bunga.png";
 import BijiIcon from "../../assets/vectors/biji.png";
 
-const mapStateToProps = (state) => {
-  return {
-    dataAllStore: state.getAllStore,
-  };
-};
-
 const ProductPage = (props) => {
+  const [product, setProduct] = useState({
+    loading: false,
+    error: false,
+    payload: [],
+  });
+  useEffect(() => {
+    setProduct({ ...product, loading: true });
+    axios
+      .get(
+        "https://merempah-predeploy-api-v2.herokuapp.com/api/v1/public/store/product/all"
+      )
+      .then((res) => {
+        setProduct({ ...product, loading: false, payload: [...res.data.data] });
+      })
+      .catch((err) => {
+        setProduct({ ...product, loading: false, error: true });
+      });
+  }, []);
   return (
     <div className="main-page">
       <div
@@ -200,8 +213,8 @@ const ProductPage = (props) => {
             </a>
           </div>
           <div className="col-lg-10">
-            {props.dataAllStore.isLoading === false ? (
-              <CustomCarousel data={props.dataAllStore.data} slideCount={3} />
+            {product.loading === false ? (
+              <CustomCarousel data={product.payload} slideCount={3} />
             ) : (
               <Spinner animation="border" variant="dark" />
             )}
@@ -244,8 +257,8 @@ const ProductPage = (props) => {
           className="row d-flex justify-content-center"
           style={{ marginRight: "0px" }}
         >
-          {props.dataAllStore.isLoading === false ? (
-            props.dataAllStore.data.map((item, index) => (
+          {product.loading === false ? (
+            product.payload.map((item, index) => (
               <div key={index} className="col-lg-2 mr-5 ml-3 mb-5">
                 <div style={{ width: "0%" }}>
                   <div className="card mt-5" style={{ width: "18rem" }}>
@@ -322,4 +335,4 @@ const ProductPage = (props) => {
   );
 };
 
-export default connect(mapStateToProps)(ProductPage);
+export default ProductPage;

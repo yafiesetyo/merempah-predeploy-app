@@ -12,6 +12,7 @@ import HelpIndex from "./pages/Help/index";
 import AboutIndex from "./pages/About/index";
 import LoginSubPage from "./pages/LoginRegister/LoginSubPage";
 import RegisterSubPage from "./pages/LoginRegister/RegisterSubPage";
+import CartPage from "./pages/Cart/CartPage";
 
 // static components
 import CustomHeader from "./components/static/Header";
@@ -49,6 +50,9 @@ function App(props) {
         </Route>
         <Route path="/about">
           <AboutIndex />
+        </Route>
+        <Route path="/cart">
+          <CartPage />
         </Route>
         <Route path="/login">
           {props.loginData.isLogin === true ? (

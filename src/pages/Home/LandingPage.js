@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { Spinner } from "react-bootstrap";
-import { GetAllStoresData } from "../../redux/actions/stores/storesAction";
 
 import CustomCarousel from "../../components/reusable/Carousel";
 
@@ -16,21 +15,28 @@ import DeliveryIcon from "../../assets/vectors/delivery.png";
 import CSIcon from "../../assets/vectors/cs.png";
 import Logo from "../../assets/Logo.png";
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    getAllStore: () => dispatch(GetAllStoresData()),
-  };
-};
-
-const mapStateToProps = (state) => {
-  return {
-    dataAllStore: state.getAllStore,
-  };
-};
-
 const LandingPage = (props) => {
+  const [product, setProduct] = useState({
+    loading: false,
+    error: false,
+    payload: [],
+  });
   useEffect(() => {
-    props.getAllStore();
+    setProduct({ ...product, loading: true });
+    axios
+      .get(
+        "https://merempah-predeploy-api-v2.herokuapp.com/api/v1/public/store/product/all"
+      )
+      .then((res) => {
+        setProduct({
+          ...product,
+          loading: false,
+          payload: [...res.data.data],
+        });
+      })
+      .catch((err) => {
+        setProduct({ ...product, loading: false, error: true });
+      });
   }, []);
   return (
     <div className="main-page">
@@ -66,7 +72,7 @@ const LandingPage = (props) => {
               <p className="header-subtitle mb-4">
                 Mau cari rempah? Kini lebih mudah dengan Merempah!
               </p>
-              <a className="getting-started-button">Mulai Sekarang</a>
+              <button className="getting-started-button">Mulai Sekarang</button>
             </div>
           </div>
         </div>
@@ -161,8 +167,8 @@ const LandingPage = (props) => {
             </a>
           </div>
           <div className="col-lg-10 d-flex align-items-center">
-            {props.dataAllStore.isLoading === false ? (
-              <CustomCarousel data={props.dataAllStore.data} slideCount={3} />
+            {product.loading === false ? (
+              <CustomCarousel data={product.payload} slideCount={3} />
             ) : (
               <Spinner animation="border" variant="dark" />
             )}
@@ -224,8 +230,8 @@ const LandingPage = (props) => {
             </a>
           </div>
           <div className="col-lg-10 mt-5 mb-3">
-            {props.dataAllStore.isLoading === false ? (
-              <CustomCarousel data={props.dataAllStore.data} slideCount={3} />
+            {product.loading === false ? (
+              <CustomCarousel data={product.payload} slideCount={3} />
             ) : (
               <Spinner animation="border" variant="dark" />
             )}
@@ -321,4 +327,4 @@ const LandingPage = (props) => {
   );
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(LandingPage);
+export default LandingPage;

@@ -8,7 +8,7 @@ import { Logout, GetData } from "../../redux/actions/user/userAction";
 const mapDispatchToProps = (dispatch) => {
   return {
     LogoutButtonHandler: () => dispatch(Logout()),
-    getUserData: (userId, id) => dispatch(GetData(userId, id)),
+    getUserData: () => dispatch(GetData()),
   };
 };
 
@@ -21,20 +21,32 @@ const mapStateToProps = (state) => {
 
 const ProfileHeader = (props) => {
   const [isToggle, setIsToggle] = useState(false);
+  useEffect(() => {
+    props.getUserData();
+  }, []);
+  console.log(`Fetched Success ? ${props.userData.isSuccess}`);
   return (
     <>
       <div
         className="profile-header-container mt-3"
         onClick={() => setIsToggle(!isToggle)}
       >
-        <div className="profile-header-image"></div>
-        <div className="profile-header-name">
-          <p>
-            {props.userData.message !== "Error"
-              ? props.userData.data[0].data[0].username
-              : "null"}
-          </p>
-        </div>
+        {props.userData.isLoading ? (
+          <div className="d-flex justify-content-center">
+            <Spinner animation="border" color="dark" />
+          </div>
+        ) : (
+          <>
+            <div className="profile-header-image"></div>
+            <div className="profile-header-name">
+              <p>
+                {props.userData.isSuccess === true
+                  ? props.userData.data[0].data[0].username
+                  : null}
+              </p>
+            </div>
+          </>
+        )}
       </div>
       <div
         className={`profile-header-dropdown ${isToggle ? "show" : "hidden"}`}

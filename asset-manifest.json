@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/merempah-predeploy-app/static/css/main.ac331c36.chunk.css",
-    "main.js": "/merempah-predeploy-app/static/js/main.cdba73f0.chunk.js",
-    "main.js.map": "/merempah-predeploy-app/static/js/main.cdba73f0.chunk.js.map",
+    "main.js": "/merempah-predeploy-app/static/js/main.6b8ef484.chunk.js",
+    "main.js.map": "/merempah-predeploy-app/static/js/main.6b8ef484.chunk.js.map",
     "runtime-main.js": "/merempah-predeploy-app/static/js/runtime-main.3b629f7c.js",
     "runtime-main.js.map": "/merempah-predeploy-app/static/js/runtime-main.3b629f7c.js.map",
     "static/css/2.0f7fa5de.chunk.css": "/merempah-predeploy-app/static/css/2.0f7fa5de.chunk.css",
-    "static/js/2.611e3264.chunk.js": "/merempah-predeploy-app/static/js/2.611e3264.chunk.js",
-    "static/js/2.611e3264.chunk.js.map": "/merempah-predeploy-app/static/js/2.611e3264.chunk.js.map",
+    "static/js/2.ba23b88b.chunk.js": "/merempah-predeploy-app/static/js/2.ba23b88b.chunk.js",
+    "static/js/2.ba23b88b.chunk.js.map": "/merempah-predeploy-app/static/js/2.ba23b88b.chunk.js.map",
     "index.html": "/merempah-predeploy-app/index.html",
-    "precache-manifest.e1c4d49b924e929ceb0e65ae9333b9c1.js": "/merempah-predeploy-app/precache-manifest.e1c4d49b924e929ceb0e65ae9333b9c1.js",
+    "precache-manifest.1fefb02fe27b3b24daa659286cac07ca.js": "/merempah-predeploy-app/precache-manifest.1fefb02fe27b3b24daa659286cac07ca.js",
     "service-worker.js": "/merempah-predeploy-app/service-worker.js",
     "static/css/2.0f7fa5de.chunk.css.map": "/merempah-predeploy-app/static/css/2.0f7fa5de.chunk.css.map",
     "static/css/main.ac331c36.chunk.css.map": "/merempah-predeploy-app/static/css/main.ac331c36.chunk.css.map",
-    "static/js/2.611e3264.chunk.js.LICENSE.txt": "/merempah-predeploy-app/static/js/2.611e3264.chunk.js.LICENSE.txt",
+    "static/js/2.ba23b88b.chunk.js.LICENSE.txt": "/merempah-predeploy-app/static/js/2.ba23b88b.chunk.js.LICENSE.txt",
     "static/media/Logo.png": "/merempah-predeploy-app/static/media/Logo.99e7ce27.png",
     "static/media/accountBg.png": "/merempah-predeploy-app/static/media/accountBg.b4eea1a7.png",
     "static/media/banner2Bg.png": "/merempah-predeploy-app/static/media/banner2Bg.aa7749ec.png",
@@ -27,8 +27,8 @@
   "entrypoints": [
     "static/js/runtime-main.3b629f7c.js",
     "static/css/2.0f7fa5de.chunk.css",
-    "static/js/2.611e3264.chunk.js",
+    "static/js/2.ba23b88b.chunk.js",
     "static/css/main.ac331c36.chunk.css",
-    "static/js/main.cdba73f0.chunk.js"
+    "static/js/main.6b8ef484.chunk.js"
   ]
 }

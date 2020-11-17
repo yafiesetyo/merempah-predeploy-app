@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/merempah-predeploy-app/precache-manifest.e1c4d49b924e929ceb0e65ae9333b9c1.js"
+  "/merempah-predeploy-app/precache-manifest.1fefb02fe27b3b24daa659286cac07ca.js"
 );
 
 self.addEventListener('message', (event) => {

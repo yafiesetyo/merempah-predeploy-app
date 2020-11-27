@@ -64,6 +64,14 @@ export const Register = (registerData) => {
   };
 };
 
+export const ClearRegister = () => {
+  return (disptach) => {
+    disptach({
+      type: UserActionTypes.FLUSH_REGISTER_DATA,
+    });
+  };
+};
+
 export const GetData = () => {
   return (dispatch) => {
     dispatch({

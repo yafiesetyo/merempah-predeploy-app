@@ -1,16 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Spinner } from "react-bootstrap";
 
-import { Register } from "../../redux/actions/user/userAction";
+import { Register, ClearRegister } from "../../redux/actions/user/userAction";
 
 import AccountBg from "../../assets/accountBg.png";
 
 const mapDispatchToProps = (dispatch) => {
   return {
     RegisterHandler: (registerData) => dispatch(Register(registerData)),
+    ClearRegister: () => dispatch(ClearRegister()),
   };
 };
 
@@ -22,6 +23,7 @@ const mapStateToProps = (state) => {
 
 const RegisterSubPage = (props) => {
   const [passwordConfirm, setPasswordConfirm] = useState("");
+  const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -40,6 +42,15 @@ const RegisterSubPage = (props) => {
     console.log("selesai");
   };
 
+  useEffect(() => {
+    props.ClearRegister();
+  }, []);
+
+  useEffect(() => {
+    if (props.data.isSuccess === true) {
+      history.push("/login");
+    }
+  }, [props.data.isSuccess]);
   return (
     <motion.div
       className="container-fluid main-page"

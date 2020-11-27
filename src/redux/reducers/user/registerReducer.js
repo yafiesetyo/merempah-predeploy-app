@@ -3,6 +3,7 @@ import UserActionTypes from "../../actions/constants/UserActionTypes";
 const initState = {
   message: "",
   isLoading: false,
+  isSuccess: false,
   data: [],
 };
 
@@ -17,6 +18,7 @@ const registerReducer = (state = initState, action) => {
       return {
         ...state,
         isLoading: false,
+        isSuccess: true,
         data: [action.response_data.data],
       };
     case UserActionTypes.ERROR_REGISTER:
@@ -24,6 +26,14 @@ const registerReducer = (state = initState, action) => {
         ...state,
         isLoading: false,
         message: action.response_data.message,
+      };
+    case UserActionTypes.FLUSH_REGISTER_DATA:
+      return {
+        ...state,
+        message: "",
+        isLoading: false,
+        isSuccess: false,
+        data: [],
       };
     default:
       return state;

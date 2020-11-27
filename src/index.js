@@ -8,7 +8,9 @@ import { Provider } from "react-redux";
 import store from "./redux/store/index";
 import * as serviceWorker from "./serviceWorker";
 
-console.log(store);
+window.onunload = () => {
+  window.localStorage.clear();
+};
 
 ReactDOM.render(
   <Provider store={store}>

@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "50c9e5eaf57687ec8a5f95d803d8db17",
+    "revision": "ccd37ecf551afc691f9358f89ec8869a",
     "url": "/merempah-predeploy-app/index.html"
   },
   {
-    "revision": "948aa9a848c62ba23d48",
+    "revision": "3367050f2aea90267c1e",
     "url": "/merempah-predeploy-app/static/css/2.0f7fa5de.chunk.css"
   },
   {
-    "revision": "97db3a1e74bef1c417ab",
-    "url": "/merempah-predeploy-app/static/css/main.ac331c36.chunk.css"
+    "revision": "3e874c40e851d6af0b0a",
+    "url": "/merempah-predeploy-app/static/css/main.cc58d9df.chunk.css"
   },
   {
-    "revision": "948aa9a848c62ba23d48",
-    "url": "/merempah-predeploy-app/static/js/2.ba23b88b.chunk.js"
+    "revision": "3367050f2aea90267c1e",
+    "url": "/merempah-predeploy-app/static/js/2.4e3af271.chunk.js"
   },
   {
     "revision": "2069192f75c6f3fb6247231eea52f248",
-    "url": "/merempah-predeploy-app/static/js/2.ba23b88b.chunk.js.LICENSE.txt"
+    "url": "/merempah-predeploy-app/static/js/2.4e3af271.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "97db3a1e74bef1c417ab",
-    "url": "/merempah-predeploy-app/static/js/main.6b8ef484.chunk.js"
+    "revision": "3e874c40e851d6af0b0a",
+    "url": "/merempah-predeploy-app/static/js/main.73b479fd.chunk.js"
   },
   {
     "revision": "828c0eac78c7387e8901",
@@ -34,6 +34,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "b4eea1a7b99f46a8c62da28001fce153",
     "url": "/merempah-predeploy-app/static/media/accountBg.b4eea1a7.png"
+  },
+  {
+    "revision": "cd36ed4c57715ddbaf1faa191c40d6f5",
+    "url": "/merempah-predeploy-app/static/media/badge_check.cd36ed4c.svg"
   },
   {
     "revision": "aa7749ec4e8429812139f39ce437e814",
@@ -74,5 +78,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "7622eee0d9d7d0303f210890a4def4fe",
     "url": "/merempah-predeploy-app/static/media/subscribeBg.7622eee0.png"
+  },
+  {
+    "revision": "27a277ac0dbe7b433488d583eac09164",
+    "url": "/merempah-predeploy-app/static/media/trash.27a277ac.svg"
   }
 ]);
